@@ -5,8 +5,6 @@ import zipfile
 # from IPython.display import display
 class DataTransformationPDFtoCSV:
     def __init__(self):
-        self.file_path_pdf = None
-        self.file_path_csv = None
         self.tables_dataframe = None
     
     def get_path(self, name_file):
@@ -18,38 +16,46 @@ class DataTransformationPDFtoCSV:
         return file_path_pdf
 
     def get_table(self, name_file_pdf):
-        self.file_path_pdf = self.get_path(name_file_pdf)
+        file_path_pdf = self.get_path(name_file_pdf)
         # reading pdf file
-        self.tables_dataframe = tabula.read_pdf(self.file_path_pdf, pages="3-181", lattice=True, multiple_tables=True)
+        self.tables_dataframe = tabula.read_pdf(file_path_pdf, pages="3-181", lattice=True, multiple_tables=True)
         # concat the tables of all pages and reset the index of dataframe
         self.tables_dataframe = pd.concat(self.tables_dataframe).reset_index(drop=True)
 
+        print("Table created")
+
     def dataframe_to_csv(self, name_file_csv):
-        self.file_path_csv = self.get_path(name_file_csv)
+        file_path_csv = self.get_path(name_file_csv)
         # create the csv file
-        self.tables_dataframe.to_csv(self.file_path_csv)
+        self.tables_dataframe.to_csv(file_path_csv)
+
+        print(f"CSV file {name_file_csv} created")
 
     def dataframe_to_excel(self, name_file_excel):
         file_path_excel = self.get_path(name_file_excel)
         # create the csv file
         self.tables_dataframe.to_excel(file_path_excel)
 
+        print(f"Excel file {name_file_excel} created")
+
     def rename_column(self, collumn_name, new_collumn_name):
         # rename the columns
         self.tables_dataframe = self.tables_dataframe.rename(columns={collumn_name: new_collumn_name})
 
-    def replace_values(self, value, new_value, column_name):
+        print(f"Column {collumn_name} renamed to {new_collumn_name}")
+
+    def replace_values(self, column_name, value, new_value):
         # replace the old values for the new ones
         # self.tables_dataframe[["OD","AMB"]] = self.tables_dataframe[["OD","AMB"]].replace(["OD", "AMB"], ["Seg. Odontológica", "Seg. Ambulatorial"])
         self.tables_dataframe[column_name] = self.tables_dataframe[column_name].replace(value, new_value)
 
-    def compact_file(self, zip_file_name):
+        print(f"Value {value} replace to {new_value} in the column {column_name}")
+
+    def compact_file(self, csv_file_name, zip_file_name):
         zip_file_name_path = self.get_path(zip_file_name)
+        file_path_csv = self.get_path(csv_file_name)
 		# create the zip file
         with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-            # select all the files of the directory "downloaded_files" and write them in the zip file
-            for csv_file in self.files_directory_path.iterdir():
-                if csv_file.is_file():
-                    zipf.write(csv_file, csv_file.name)
+            zipf.write(file_path_csv, file_path_csv.name)
 
         print(f"All the files have compacted in the file {zip_file_name}.")
