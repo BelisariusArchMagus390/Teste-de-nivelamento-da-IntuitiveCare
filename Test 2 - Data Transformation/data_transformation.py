@@ -1,11 +1,8 @@
 from pathlib import Path
 import tabula
 import pandas as pd
+import zipfile
 # from IPython.display import display
-
-name_file_pdf = "Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
-name_file_csv = "Anexo_I_Rol_2021RN_465.2021_RN627L.2024.csv"
-
 class DataTransformationPDFtoCSV:
     def __init__(self):
         self.file_path_pdf = None
@@ -33,7 +30,7 @@ class DataTransformationPDFtoCSV:
         self.tables_dataframe.to_csv(self.file_path_csv)
 
     def dataframe_to_excel(self, name_file_excel):
-        file_path_excel = self.get_path(name_file_csv)
+        file_path_excel = self.get_path(name_file_excel)
         # create the csv file
         self.tables_dataframe.to_excel(file_path_excel)
 
@@ -45,3 +42,14 @@ class DataTransformationPDFtoCSV:
         # replace the old values for the new ones
         # self.tables_dataframe[["OD","AMB"]] = self.tables_dataframe[["OD","AMB"]].replace(["OD", "AMB"], ["Seg. Odontológica", "Seg. Ambulatorial"])
         self.tables_dataframe[column_name] = self.tables_dataframe[column_name].replace(value, new_value)
+
+    def compact_file(self, zip_file_name):
+        zip_file_name_path = self.get_path(zip_file_name)
+		# create the zip file
+        with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            # select all the files of the directory "downloaded_files" and write them in the zip file
+            for csv_file in self.files_directory_path.iterdir():
+                if csv_file.is_file():
+                    zipf.write(csv_file, csv_file.name)
+
+        print(f"All the files have compacted in the file {zip_file_name}.")
