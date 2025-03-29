@@ -1,0 +1,3 @@
+from data_transformation import DataTransformationPDFtoCSV
+
+dt_transform = DataTransformationPDFtoCSV()
