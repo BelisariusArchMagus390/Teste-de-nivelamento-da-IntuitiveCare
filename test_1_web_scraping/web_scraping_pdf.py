@@ -55,7 +55,7 @@ class DownloadPDFFile:
 		file_path = self.files_directory_path.joinpath(self.files_directory_path, file_name)
 
 		response_download_pdf = requests.get(pdf_link)
-		if response_download_pdf.status_code == 200:
+		if (response_download_pdf.status_code == 200) and (response_download_pdf.headers.get("Content-Type", "").lower()) == "application/pdf":
 			# download the pdf
 			with open(file_path, "wb") as pdf_file:
 				pdf_file.write(response_download_pdf.content)
@@ -71,7 +71,7 @@ class DownloadPDFFile:
 		actual_directory = Path(__file__).parent
 		# zip file path
 		zip_file_name_path = actual_directory.joinpath(actual_directory, zip_file_name)
-
+		
 		# create the zip file
 		with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
 			# select all the files of the directory "downloaded_files" and write them in the zip file

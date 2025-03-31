@@ -110,7 +110,7 @@ def test_download_pdf_sucess(download_pdf_file, mocker, tmp_path):
     # create mock
     mock_response = Mock()
     mock_response.status_code = 200
-    mock_response.headers = {"Content-type": "application/pdf"}
+    mock_response.headers = {"Content-Type": "application/pdf"}
     mock_response.content = pdf_content
 
     # replace the response
@@ -120,7 +120,7 @@ def test_download_pdf_sucess(download_pdf_file, mocker, tmp_path):
 
     download_file = download_pdf_file.download_pdf("http://gov.br/anexo.pdf")
 
-    # make verification if the file exists
+    # make verification of the request
     assert download_file is not None
     assert download_file.exists()
     # make verification if the content is the expected
@@ -144,7 +144,6 @@ def test_download_pdf_404_failure(download_pdf_file, mocker):
 def test_download_pdf_timeout_failure(download_pdf_file, mocker):
     # create mock
     mock_response = Mock(side_effect=requests.exceptions.Timeout)
-    mock_response.status_code = 404
 
     # replace the response
     mocker.patch("requests.get", return_value=mock_response)
@@ -154,7 +153,7 @@ def test_download_pdf_timeout_failure(download_pdf_file, mocker):
     # make verification if the file exists
     assert download_file == None
 
-def test_download_type_file_invalid_sucess(download_pdf_file, mocker, tmp_path):
+def test_download_type_file_invalid(download_pdf_file, mocker, tmp_path):
 
     # create mock
     mock_response = Mock()
@@ -177,3 +176,15 @@ def test_download_type_file_invalid_sucess(download_pdf_file, mocker, tmp_path):
 
     assert download_file == None
     
+def test_download_not_exists_directory(download_pdf_file, tmp_path):
+    # create a temporary directory path
+    downloaded_files_path_tmp = tmp_path / "downloaded_files"
+    # define the value of the atribute files_directory_path
+    download_pdf_file.files_directory_path = downloaded_files_path_tmp
+
+    # verify if the directory not exists
+    assert not downloaded_files_path_tmp.exists()
+    # create the directory if no exists
+    download_pdf_file.files_directory_path.mkdir(parents=True, exist_ok=True)
+    # verify if now the directory exists
+    assert downloaded_files_path_tmp.exists()
