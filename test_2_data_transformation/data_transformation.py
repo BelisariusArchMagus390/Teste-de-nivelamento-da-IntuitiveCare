@@ -11,18 +11,31 @@ class DataTransformationPDFtoCSV:
         # path of the file data_transformation.py
         file_path = Path(__file__).parent
         directory_path = Path("data")
+        file_path = file_path.joinpath(file_path, directory_path)
+
+        # create the data directory if not exists 
+        if not file_path.exists():
+            Path(file_path).mkdir(exist_ok=True)
+
         # return the path of the file
-        file_path_pdf = file_path.joinpath(file_path, directory_path, name_file)
+        file_path_pdf = file_path.joinpath(file_path, name_file)
         return file_path_pdf
 
     def get_table(self, name_file_pdf):
         file_path_pdf = self.get_path(name_file_pdf)
-        # reading pdf file
-        self.tables_dataframe = tabula.read_pdf(file_path_pdf, pages="3-181", lattice=True, multiple_tables=True, encoding='latin1')
-        # concat the tables of all pages and reset the index of dataframe
-        self.tables_dataframe = pd.concat(self.tables_dataframe).reset_index(drop=True)
 
-        print("Table created")
+        # verify if the file is PDF
+        if Path(file_path_pdf).suffix.lower() == ".pdf":
+            # reading pdf file
+            self.tables_dataframe = tabula.read_pdf(file_path_pdf, pages="3-181", lattice=True, multiple_tables=True, encoding='latin1')
+            # concat the tables of all pages and reset the index of dataframe
+            self.tables_dataframe = pd.concat(self.tables_dataframe).reset_index(drop=True)
+
+            print("Table created")
+            return True
+        else:
+            print("Error, the file is not PDF.")
+            return False
 
     def dataframe_to_csv(self, name_file_csv):
         file_path_csv = self.get_path(name_file_csv)
@@ -51,11 +64,18 @@ class DataTransformationPDFtoCSV:
 
         print(f"Value {value} replace to {new_value} in the column {column_name}")
 
-    def compact_file(self, csv_file_name, zip_file_name):
+    def compact_csv_file(self, csv_file_name, zip_file_name):
         zip_file_name_path = self.get_path(zip_file_name)
         file_path_csv = self.get_path(csv_file_name)
-		# create the zip file
-        with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-            zipf.write(file_path_csv, file_path_csv.name)
+        
+        # verify if the file is CSV
+        if Path(file_path_csv).suffix.lower() == ".csv":
+            # create the zip file
+            with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                zipf.write(file_path_csv, file_path_csv.name)
 
-        print(f"All the files have compacted in the file {zip_file_name}.")
+            print(f"All the files have compacted in the file {zip_file_name}.")
+            return True
+        else:
+            print("Error, the file is not CSV.")
+            return False
