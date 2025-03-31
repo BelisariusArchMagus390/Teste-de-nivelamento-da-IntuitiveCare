@@ -4,14 +4,13 @@ from pathlib import Path
 import zipfile
 
 class DownloadPDFFile:
-	def __init__(self, page_url):
-		self.page_url = page_url
+	def __init__(self):
 		self.request_response = None
 		self.files_directory_path = None
 
-	def request_html(self):
+	def request_html(self, page_url):
 		# request html of the page
-		request = requests.get(self.page_url)
+		request = requests.get(page_url)
 		# make verification if was successful the request
 		if request.status_code == 200:
 			print("Successful request\n")
