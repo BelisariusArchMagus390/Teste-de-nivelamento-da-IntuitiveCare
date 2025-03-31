@@ -72,11 +72,16 @@ class DownloadPDFFile:
 		# zip file path
 		zip_file_name_path = actual_directory.joinpath(actual_directory, zip_file_name)
 		
-		# create the zip file
-		with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-			# select all the files of the directory "downloaded_files" and write them in the zip file
-			for pdf_file in self.files_directory_path.iterdir():
-				if pdf_file.is_file():
-					zipf.write(pdf_file, pdf_file.name)
-		
-		print(f"All the files have compacted in the file {zip_file_name}.")
+		if self.files_directory_path != None:
+			# create the zip file
+			with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+				# select all the files of the directory "downloaded_files" and write them in the zip file
+				for pdf_file in self.files_directory_path.iterdir():
+					if pdf_file.is_file():
+						zipf.write(pdf_file, pdf_file.name)
+			
+			print(f"All the files have compacted in the file {zip_file_name}.")
+			return zip_file_name_path
+		else:
+			print(f"Error, can't compact the files. The default directory don't exist.")
+			return None

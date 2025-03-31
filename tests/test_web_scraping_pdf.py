@@ -188,3 +188,23 @@ def test_download_not_exists_directory(download_pdf_file, tmp_path):
     download_pdf_file.files_directory_path.mkdir(parents=True, exist_ok=True)
     # verify if now the directory exists
     assert downloaded_files_path_tmp.exists()
+
+# tests of compact_file()
+def test_compact_file_sucess(download_pdf_file, tmp_path):
+    download_pdf_file.files_directory_path = tmp_path
+
+    zip_file = download_pdf_file.compact_file("pdf_files.zip")
+
+    # make verification if the file exists
+    assert zip_file is not None
+    assert zip_file.exists()
+    # remove the temporary file
+    zip_file.unlink()
+
+def test_compact_file_path_missing_failure(download_pdf_file, tmp_path):
+    download_pdf_file.files_directory_path = None
+
+    zip_file = download_pdf_file.compact_file("pdf_files.zip")
+
+    # make verification if the file not exists
+    assert zip_file == None
