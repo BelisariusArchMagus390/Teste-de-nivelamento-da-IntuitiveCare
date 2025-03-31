@@ -4,13 +4,14 @@ from pathlib import Path
 import zipfile
 
 class DownloadPDFFile:
-	def __init__(self):
+	def __init__(self, page_url):
+		self.page_url = page_url
 		self.request_response = None
 		self.files_directory_path = None
 
-	def request_html(self, page_url):
+	def request_html(self):
 		# request html of the page
-		request = requests.get(page_url)
+		request = requests.get(self.page_url)
 		# make verification if was successful the request
 		if request.status_code == 200:
 			print("Successful request\n")
@@ -48,7 +49,6 @@ class DownloadPDFFile:
 		# check if the directory does not exists and create a new one if doesn't
 		if not self.files_directory_path.exists():
 			Path(self.files_directory_path).mkdir(exist_ok=True)
-		# elif self.files_directory_path.exists() and self.files_directory_path.is_dir():
 
 		file_name = pdf_link.split("/")[-1]
 
@@ -61,8 +61,11 @@ class DownloadPDFFile:
 				pdf_file.write(response_download_pdf.content)
 
 			print(f"Download Completed of the file {file_name}\n")
+
+			return file_path
 		else:
 			print("Download failed.\n")
+			return None
 	
 	def compact_file(self, zip_file_name):
 		actual_directory = Path(__file__).parent
