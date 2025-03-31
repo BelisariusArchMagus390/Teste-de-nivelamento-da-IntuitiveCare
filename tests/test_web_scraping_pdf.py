@@ -178,7 +178,7 @@ def test_download_type_file_invalid(download_pdf_file, mocker, tmp_path):
     
 def test_download_not_exists_directory(download_pdf_file, tmp_path):
     # create a temporary directory path
-    downloaded_files_path_tmp = tmp_path / "downloaded_files"
+    downloaded_files_path_tmp = tmp_path.joinpath(tmp_path, "downloaded_files")
     # define the value of the atribute files_directory_path
     download_pdf_file.files_directory_path = downloaded_files_path_tmp
 

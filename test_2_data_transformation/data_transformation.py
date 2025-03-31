@@ -6,19 +6,20 @@ import zipfile
 class DataTransformationPDFtoCSV:
     def __init__(self):
         self.tables_dataframe = None
+        self.file_path = None
     
     def get_path(self, name_file):
         # path of the file data_transformation.py
-        file_path = Path(__file__).parent
+        self.file_path = Path(__file__).parent
         directory_path = Path("data")
-        file_path = file_path.joinpath(file_path, directory_path)
+        self.file_path = self.file_path.joinpath(self.file_path, directory_path)
 
         # create the data directory if not exists 
-        if not file_path.exists():
-            Path(file_path).mkdir(exist_ok=True)
+        if not self.file_path.exists():
+            Path(self.file_path).mkdir(exist_ok=True)
 
         # return the path of the file
-        file_path_pdf = file_path.joinpath(file_path, name_file)
+        file_path_pdf = self.file_path.joinpath(self.file_path, name_file)
         return file_path_pdf
 
     def get_table(self, name_file_pdf):
