@@ -18,7 +18,7 @@ class DataTransformationPDFtoCSV:
     def get_table(self, name_file_pdf):
         file_path_pdf = self.get_path(name_file_pdf)
         # reading pdf file
-        self.tables_dataframe = tabula.read_pdf(file_path_pdf, pages="3-181", lattice=True, multiple_tables=True)
+        self.tables_dataframe = tabula.read_pdf(file_path_pdf, pages="3-181", lattice=True, multiple_tables=True, encoding='latin1')
         # concat the tables of all pages and reset the index of dataframe
         self.tables_dataframe = pd.concat(self.tables_dataframe).reset_index(drop=True)
 
