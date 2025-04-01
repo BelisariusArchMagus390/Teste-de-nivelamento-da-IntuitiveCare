@@ -46,13 +46,13 @@ Para que que todos os testes propostos possam ser executados siga os passos abai
 ```
 pip install -r requirements.txt
 ```
-3 - Para executar o back-end do teste 4 utilize:
+3 - Para executar o back-end do teste 4 utilize o seguinte comando estando dentro do diretório _**test_4_api**_:
 
 ```
 uvicorn server_api:app --reload
 ```
 
-4 - Para a execução do front-end do teste 4 utilize:
+4 - Para a execução do front-end do teste 4 utilize o seguinte comando estando dentro do diretório _**test_4_api/front_server**_::
 
 ```
 npm run dev
