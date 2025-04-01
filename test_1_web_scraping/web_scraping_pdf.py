@@ -49,32 +49,39 @@ class DownloadPDFFile:
 		# check if the directory does not exists and create a new one if doesn't
 		if not self.files_directory_path.exists():
 			Path(self.files_directory_path).mkdir(exist_ok=True)
-		# elif self.files_directory_path.exists() and self.files_directory_path.is_dir():
 
 		file_name = pdf_link.split("/")[-1]
 
 		file_path = self.files_directory_path.joinpath(self.files_directory_path, file_name)
 
 		response_download_pdf = requests.get(pdf_link)
-		if response_download_pdf.status_code == 200:
+		if (response_download_pdf.status_code == 200) and (response_download_pdf.headers.get("Content-Type", "").lower()) == "application/pdf":
 			# download the pdf
 			with open(file_path, "wb") as pdf_file:
 				pdf_file.write(response_download_pdf.content)
 
 			print(f"Download Completed of the file {file_name}\n")
+
+			return file_path
 		else:
 			print("Download failed.\n")
+			return None
 	
 	def compact_file(self, zip_file_name):
 		actual_directory = Path(__file__).parent
 		# zip file path
 		zip_file_name_path = actual_directory.joinpath(actual_directory, zip_file_name)
-
-		# create the zip file
-		with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-			# select all the files of the directory "downloaded_files" and write them in the zip file
-			for pdf_file in self.files_directory_path.iterdir():
-				if pdf_file.is_file():
-					zipf.write(pdf_file, pdf_file.name)
 		
-		print(f"All the files have compacted in the file {zip_file_name}.")
+		if self.files_directory_path != None:
+			# create the zip file
+			with zipfile.ZipFile(zip_file_name_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+				# select all the files of the directory "downloaded_files" and write them in the zip file
+				for pdf_file in self.files_directory_path.iterdir():
+					if pdf_file.is_file():
+						zipf.write(pdf_file, pdf_file.name)
+			
+			print(f"All the files have compacted in the file {zip_file_name}.")
+			return zip_file_name_path
+		else:
+			print(f"Error, can't compact the files. The default directory don't exist.")
+			return None

@@ -22,4 +22,4 @@ dt_transform.dataframe_to_csv(csv_file_name)
 dt_transform.dataframe_to_excel(excel_file_name)
 
 # compact the csv file
-dt_transform.compact_file(csv_file_name, zip_file_name)
+dt_transform.compact_csv_file(csv_file_name, zip_file_name)
