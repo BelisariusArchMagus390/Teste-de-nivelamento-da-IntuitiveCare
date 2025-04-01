@@ -12,22 +12,18 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+# get the file path
 file_path = Path(__file__).parent
 file_path = file_path.joinpath(file_path, "data", "Relatorio_cadop.csv")
-
+# read the csv file
 df = pd.read_fwf(file_path, delimiter=";")
-
+# remove the extra black spaces from the column names and for the rest of the rows
 df.columns = df.columns.str.strip()
 df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
-
-@app.get("/buscar")
-def buscar_operadora(registro_ans: str = Query(..., min_length=1)):
-    registro_ans = registro_ans.strip().upper()  # Remove espaços extras e converte para uppercase
-    resultado = df[df["Registro_ANS"].str.replace(r"\s+", " ", regex=True).str.upper().str.contains(registro_ans, case=False, na=False)]
+# set the route for the research function
+@app.get("/search")
+# make the research in the dataframe getting the values by a GET
+def search_information(input_field: str, column_search: str):
+    input_field = input_field.strip().upper() 
+    resultado = df[df[column_search].str.replace(r"\s+", " ", regex=True).str.upper().str.contains(input_field, case=False, na=False)]
     return resultado.to_dict(orient="records")
-
-#@app.get("/buscar")
-#def buscar_operadora(razao_social: str = Query(..., min_length=1)):
-#    resultado = df[df["Razao_Social"].str.contains(razao_social, case=False, na=False)]
-#    return resultado.to_dict(orient="records")
