@@ -33,7 +33,7 @@ O resultado das queries analíticas para as perguntas propostas foram:
 
 ### Teste 4
 No Teste 4, para a resolução do que foi proposto foi feito um back-end em python utilizando o FastAPI, que possui uma função que retorna os resultados de uma busca feita no arquivo _**Relatorio_cadop.csv**_, podendo ser buscado através do valor de qualquer coluna e um front-end feito em Vue.js, para conseguir os inputs do usuário e enviar para o servidor.
-A coleção de requisoções no postman estão no diretório _**postman_requests**_, no diretório respectivo do Teste 4.
+A coleção de requisoções, assim como os testes de response do postman estão no diretório _**postman_requests**_, no diretório respectivo do Teste 4, como arquivos .json.
 
 ## Requisitos
 
