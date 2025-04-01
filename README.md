@@ -18,6 +18,14 @@
 ### Teste 2
 
 ### Teste 3
+Para o teste 3 foi feito um banco de dados para que pudesse comportar os dados em que seriam trabalhado as queries onde, todas os dados dos arquivos .csv relacionados com os registros contábeis dos trimestres foram mesclados quando importados em uma única tabela de nome demonstracoes_contabeis e para o arquivo de registros cadastrais foi feita uma tabela de nome relatorio_cadop.
+O resultado das queries analíticas para as perguntas propostas foram:
+
+1 - Quais as 10 operadoras com maiores despesas em "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR" no último trimestre?
+<img src="https://imgur.com/a/S1Veo80.PNG" />
+
+2 - Quais as 10 operadoras com maiores despesas nessa categoria no último ano?
+<img src="https://imgur.com/a/18nSZnI.PNG" />
 
 ### Teste 4
 
