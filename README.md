@@ -52,7 +52,7 @@ pip install -r requirements.txt
 uvicorn server_api:app --reload
 ```
 
-4 - Para a execução do front-end do teste 4 utilize o seguinte comando estando dentro do diretório _**test_4_api/front_server**_::
+4 - Para a execução do front-end do teste 4 utilize o seguinte comando estando dentro do diretório _**front_server**_ que está dentro de _**test_4_api**_:
 
 ```
 npm run dev
