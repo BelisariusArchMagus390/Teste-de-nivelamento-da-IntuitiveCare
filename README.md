@@ -38,6 +38,7 @@ A coleção de requisoções no postman estão no diretório _**postman_requests
 ## Requisitos
 
 Para que que todos os testes propostos possam ser executados siga os passos abaixo:
+
 1 - Primeiro clone ou baixe o repositório github
 2 - Instale as bibliotecas necessárias executando o comando:
 
