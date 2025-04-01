@@ -49,12 +49,12 @@ const searchInformationTable = async () => {
     <table border="1">
       <thead>
         <tr>
-          <th v-for="(content, column) in result_search[0]" :key="column">{{ column }}</th>
+          <th v-for="(content, column) in result_search[0]" :key="column">{{ column.replace(/"/g, '') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(row, index) in result_search" :key="index">
-          <td v-for="(content, column) in row" :key="column">{{ content }}</td>
+          <td v-for="(content, column) in row" :key="column">{{ content.replace(/"/g, '') }}</td>
         </tr>
       </tbody>
     </table>
