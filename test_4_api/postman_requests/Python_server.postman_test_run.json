@@ -1,0 +1,462 @@
+{
+	"id": "b043c4d2-dfb4-4a96-83fd-d59b3bb309bd",
+	"name": "Python_server",
+	"timestamp": "2025-04-01T22:11:58.518Z",
+	"collection_id": "43656554-6d88d8ad-7bd8-4f22-b483-12b5ffd66553",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-04-01T22:11:56.412Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "7409af4f-7b93-4974-b95d-7a7129bc9682",
+			"name": "Example Registro_ANS",
+			"url": "http://127.0.0.1:8000/search?input_field=419761&column_search=Registro_ANS",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e2d69f75-d2a3-4421-9160-978f9a4df7c9",
+			"name": "Example CNPJ",
+			"url": "http://127.0.0.1:8000/search?input_field=22869997000153&column_search=CNPJ",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a09c98de-d12e-49fb-93ff-159d4caa2523",
+			"name": "Example Razao_Social",
+			"url": "http://127.0.0.1:8000/search?input_field=2CARE OPERADORA DE SAÚDE LTDA.&column_search=Razao_Social",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "09c57e49-79a7-4265-8ec6-013218f614dc",
+			"name": "Example Nome_Fantasia",
+			"url": "http://127.0.0.1:8000/search?input_field=ALICE&column_search=Nome_Fantasia",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2c8aa6eb-f1d7-45a9-8cad-66ffd9a4ee73",
+			"name": "Example Modalidade",
+			"url": "http://127.0.0.1:8000/search?input_field=Medicina de Grupo&column_search=Modalidade",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				35
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1e143ffb-3f2b-4557-8dec-901aaf3a0d89",
+			"name": "Example Logradouro",
+			"url": "http://127.0.0.1:8000/search?input_field=RUA TIRADENTES&column_search=Logradouro",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				20
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "05814c8e-e20b-4dc5-aed8-319e05ad286c",
+			"name": "Example Numero",
+			"url": "http://127.0.0.1:8000/search?input_field=3535&column_search=Numero",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f21290f4-b2a4-47f9-8c35-b6604d0459c3",
+			"name": "Example Complemento",
+			"url": "http://127.0.0.1:8000/search?input_field=PRÉDIO&column_search=Complemento",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d6f41f21-61de-4457-9779-e4fdcbdffe55",
+			"name": "Example Bairro",
+			"url": "http://127.0.0.1:8000/search?input_field=LIBERDADE&column_search=Bairro",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5e3475b4-a462-4ab0-8396-bbe3549e1a1b",
+			"name": "Example Cidade",
+			"url": "http://127.0.0.1:8000/search?input_field=Campinas&column_search=Cidade",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				21
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "045b199b-e792-4435-b1c4-cb103c84a185",
+			"name": "Example UF",
+			"url": "http://127.0.0.1:8000/search?input_field=MG&column_search=UF",
+			"time": 33,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				33
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "19b9c23c-7ba1-45a0-befb-57ad809a4f13",
+			"name": "Example CEP",
+			"url": "http://127.0.0.1:8000/search?input_field=14300000&column_search=CEP",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b6d72291-40f5-465a-a6c7-6dd5c95ccb1d",
+			"name": "Example DDD",
+			"url": "http://127.0.0.1:8000/search?input_field=81&column_search=DDD",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8e6852dc-465c-462d-90c6-4300ac8cc404",
+			"name": "Example Telefone",
+			"url": "http://127.0.0.1:8000/search?input_field=31994536&column_search=Telefone",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "53a91887-4318-4170-b59d-44b3913039cd",
+			"name": "Example Fax",
+			"url": "http://127.0.0.1:8000/search?input_field=36113013&column_search=Fax",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f3c5362f-c8e4-47e8-871d-9f83d906cacf",
+			"name": "Example Endereco_eletronico",
+			"url": "http://127.0.0.1:8000/search?input_field=clairton@hab.org.br&column_search=Endereco_eletronico",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fd3fac90-a848-47cb-94f0-78c2f9eaae7f",
+			"name": "Example Representante",
+			"url": "http://127.0.0.1:8000/search?input_field=MARCIO ALVES&column_search=Representante",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "363efb88-0086-41cf-bd96-13c1687dee5a",
+			"name": "Example Cargo_Representante",
+			"url": "http://127.0.0.1:8000/search?input_field=DIRETORA&column_search=Cargo_Representante",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "784b3b37-29a6-446f-8221-9773a2aab2ee",
+			"name": "Example Regiao_de_Comercializacao",
+			"url": "http://127.0.0.1:8000/search?input_field=4&column_search=Regiao_de_Comercializacao",
+			"time": 27,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				27
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dff3acee-b9f9-4094-8e99-0a880182d8bf",
+			"name": "Example Data_Registro_ANS",
+			"url": "http://127.0.0.1:8000/search?input_field=1998-12-21&column_search=Data_Registro_ANS",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 309,
+	"collection": {
+		"requests": [
+			{
+				"id": "7409af4f-7b93-4974-b95d-7a7129bc9682",
+				"method": "GET"
+			},
+			{
+				"id": "e2d69f75-d2a3-4421-9160-978f9a4df7c9",
+				"method": "GET"
+			},
+			{
+				"id": "a09c98de-d12e-49fb-93ff-159d4caa2523",
+				"method": "GET"
+			},
+			{
+				"id": "09c57e49-79a7-4265-8ec6-013218f614dc",
+				"method": "GET"
+			},
+			{
+				"id": "2c8aa6eb-f1d7-45a9-8cad-66ffd9a4ee73",
+				"method": "GET"
+			},
+			{
+				"id": "1e143ffb-3f2b-4557-8dec-901aaf3a0d89",
+				"method": "GET"
+			},
+			{
+				"id": "05814c8e-e20b-4dc5-aed8-319e05ad286c",
+				"method": "GET"
+			},
+			{
+				"id": "f21290f4-b2a4-47f9-8c35-b6604d0459c3",
+				"method": "GET"
+			},
+			{
+				"id": "d6f41f21-61de-4457-9779-e4fdcbdffe55",
+				"method": "GET"
+			},
+			{
+				"id": "5e3475b4-a462-4ab0-8396-bbe3549e1a1b",
+				"method": "GET"
+			},
+			{
+				"id": "045b199b-e792-4435-b1c4-cb103c84a185",
+				"method": "GET"
+			},
+			{
+				"id": "19b9c23c-7ba1-45a0-befb-57ad809a4f13",
+				"method": "GET"
+			},
+			{
+				"id": "b6d72291-40f5-465a-a6c7-6dd5c95ccb1d",
+				"method": "GET"
+			},
+			{
+				"id": "8e6852dc-465c-462d-90c6-4300ac8cc404",
+				"method": "GET"
+			},
+			{
+				"id": "53a91887-4318-4170-b59d-44b3913039cd",
+				"method": "GET"
+			},
+			{
+				"id": "f3c5362f-c8e4-47e8-871d-9f83d906cacf",
+				"method": "GET"
+			},
+			{
+				"id": "fd3fac90-a848-47cb-94f0-78c2f9eaae7f",
+				"method": "GET"
+			},
+			{
+				"id": "363efb88-0086-41cf-bd96-13c1687dee5a",
+				"method": "GET"
+			},
+			{
+				"id": "784b3b37-29a6-446f-8221-9773a2aab2ee",
+				"method": "GET"
+			},
+			{
+				"id": "dff3acee-b9f9-4094-8e99-0a880182d8bf",
+				"method": "GET"
+			}
+		]
+	}
+}
