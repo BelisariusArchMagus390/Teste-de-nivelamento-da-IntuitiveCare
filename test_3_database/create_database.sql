@@ -1,8 +1,3 @@
---SELECT 'CREATE DATABASE test_3_database'
---WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'test_3_database')
-
---drop table demonstracoes_contabeis;
-
 CREATE TABLE IF NOT EXISTS demonstracoes_contabeis (
 	id_demonstrativo SERIAL PRIMARY KEY,
     dt DATE,
