@@ -1,0 +1,650 @@
+{
+	"info": {
+		"_postman_id": "6d88d8ad-7bd8-4f22-b483-12b5ffd66553",
+		"name": "Python_server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43656554"
+	},
+	"item": [
+		{
+			"name": "Example Registro_ANS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=419761&column_search=Registro_ANS",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "419761"
+						},
+						{
+							"key": "column_search",
+							"value": "Registro_ANS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example CNPJ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=22869997000153&column_search=CNPJ",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "22869997000153"
+						},
+						{
+							"key": "column_search",
+							"value": "CNPJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Razao_Social",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=2CARE OPERADORA DE SAÚDE LTDA.&column_search=Razao_Social",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "2CARE OPERADORA DE SAÚDE LTDA."
+						},
+						{
+							"key": "column_search",
+							"value": "Razao_Social"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Nome_Fantasia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=ALICE&column_search=Nome_Fantasia",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "ALICE"
+						},
+						{
+							"key": "column_search",
+							"value": "Nome_Fantasia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Modalidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=Medicina de Grupo&column_search=Modalidade",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "Medicina de Grupo"
+						},
+						{
+							"key": "column_search",
+							"value": "Modalidade"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Logradouro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=RUA TIRADENTES&column_search=Logradouro",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "RUA TIRADENTES"
+						},
+						{
+							"key": "column_search",
+							"value": "Logradouro"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Numero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=3535&column_search=Numero",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "3535"
+						},
+						{
+							"key": "column_search",
+							"value": "Numero"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Complemento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=PRÉDIO&column_search=Complemento",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "PRÉDIO"
+						},
+						{
+							"key": "column_search",
+							"value": "Complemento"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Bairro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=LIBERDADE&column_search=Bairro",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "LIBERDADE"
+						},
+						{
+							"key": "column_search",
+							"value": "Bairro"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Cidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=Campinas&column_search=Cidade",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "Campinas"
+						},
+						{
+							"key": "column_search",
+							"value": "Cidade"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example UF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=MG&column_search=UF",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "MG"
+						},
+						{
+							"key": "column_search",
+							"value": "UF"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example CEP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=14300000&column_search=CEP",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "14300000"
+						},
+						{
+							"key": "column_search",
+							"value": "CEP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example DDD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=81&column_search=DDD",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "81"
+						},
+						{
+							"key": "column_search",
+							"value": "DDD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Telefone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=31994536&column_search=Telefone",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "31994536"
+						},
+						{
+							"key": "column_search",
+							"value": "Telefone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Fax",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=36113013&column_search=Fax",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "36113013"
+						},
+						{
+							"key": "column_search",
+							"value": "Fax"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Endereco_eletronico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=clairton@hab.org.br&column_search=Endereco_eletronico",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "clairton@hab.org.br"
+						},
+						{
+							"key": "column_search",
+							"value": "Endereco_eletronico"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Representante",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=MARCIO ALVES&column_search=Representante",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "MARCIO ALVES"
+						},
+						{
+							"key": "column_search",
+							"value": "Representante"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Cargo_Representante",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=DIRETORA&column_search=Cargo_Representante",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "DIRETORA"
+						},
+						{
+							"key": "column_search",
+							"value": "Cargo_Representante"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Regiao_de_Comercializacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=4&column_search=Regiao_de_Comercializacao",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "4"
+						},
+						{
+							"key": "column_search",
+							"value": "Regiao_de_Comercializacao"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example Data_Registro_ANS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?input_field=1998-12-21&column_search=Data_Registro_ANS",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "input_field",
+							"value": "1998-12-21"
+						},
+						{
+							"key": "column_search",
+							"value": "Data_Registro_ANS"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
