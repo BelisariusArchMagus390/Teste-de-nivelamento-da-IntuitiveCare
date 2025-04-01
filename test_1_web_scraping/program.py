@@ -5,17 +5,17 @@ tag = "a"
 zip_file_name = "pdf_files.zip"
 
 # creating object
-annex = DownloadPDFFile(page_url)
+attachment = DownloadPDFFile(page_url)
 
 # make a request 
-annex.request_html()
+attachment.request_html()
 
 # search the specified files
-annex_1_link = annex.search_pdf(tag, "Anexo I.")
-annex_2_link = annex.search_pdf(tag, "Anexo II.")
+attachment_1_link = attachment.search_pdf(tag, "Anexo I.")
+attachment_2_link = attachment.search_pdf(tag, "Anexo II.")
 
 # download the files
-annex.download_pdf(annex_1_link)
-annex.download_pdf(annex_2_link)
+attachment.download_pdf(attachment_1_link)
+attachment.download_pdf(attachment_2_link)
 
-annex.compact_file(zip_file_name)
+attachment.compact_file(zip_file_name)
