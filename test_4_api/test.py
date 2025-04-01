@@ -4,9 +4,9 @@ import pandas as pd
 from pathlib import Path
 import csv
 
-def buscar_operadora(registro_ans: str = Query(..., min_length=1)):
-    registro_ans = registro_ans.strip().upper()  # Remove espaços extras e converte para uppercase
-    resultado = df[df["Registro_ANS"].str.replace(r"\s+", " ", regex=True).str.upper().str.contains(registro_ans, case=False, na=False)]
+def search_information(input_field: str = Query(...), column_search: str = Query(...)):
+    input_field = input_field.strip().upper() 
+    resultado = df[df[column_search].str.replace(r"\s+", " ", regex=True).str.upper().str.contains(input_field, case=False, na=False)]
     return resultado.to_dict(orient="records")
 
 # Caminho do arquivo CSV
@@ -20,6 +20,10 @@ df = pd.read_fwf(file_path, delimiter=";")
 df.columns = df.columns.str.strip()
 df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
-lol = buscar_operadora("419761")
+lol = search_information("19541931000125", "CNPJ")
 
 print(lol)
+#print(lol)
+
+#for i in df.columns.to_list():
+#    print(i)
