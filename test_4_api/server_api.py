@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 from pathlib import Path
@@ -24,6 +24,7 @@ df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 @app.get("/search")
 # make the research in the dataframe getting the values by a GET
 def search_information(input_field: str, column_search: str):
+    # remove the extra spaces from the input and make a uppercase in the letters
     input_field = input_field.strip().upper() 
     resultado = df[df[column_search].str.replace(r"\s+", " ", regex=True).str.upper().str.contains(input_field, case=False, na=False)]
     return resultado.to_dict(orient="records")
