@@ -14,57 +14,115 @@ const searchInformationTable = async () => {
     console.error("Erro ao buscar dados:", error);
   }
 };
+
+const columns = ref([
+  { title: "Registro ANS", value: "Registro_ANS" },
+  { title: "CNPJ", value: "CNPJ" },
+  { title: "Razão social", value: "Razao_Social" },
+  { title: "Nome fantasia", value: "Nome_Fantasia" },
+  { title: "Modalidade", value: "Modalidade" },
+  { title: "Logradouro", value: "Logradouro" },
+  { title: "Número", value: "Numero" },
+  { title: "Complemento", value: "Complemento" },
+  { title: "Bairro", value: "Bairro" },
+  { title: "Cidade", value: "Cidade" },
+  { title: "UF", value: "UF" },
+  { title: "CEP", value: "CEP" },
+  { title: "DDD", value: "DDD" },
+  { title: "Telefone", value: "Telefone" },
+  { title: "Fax", value: "Fax" },
+  { title: "Endereço eletrônico", value: "Endereco_eletronico" },
+  { title: "Representante", value: "Representante" },
+  { title: "Cargo do representante", value: "Cargo_Representante" },
+  { title: "Região de comercialização", value: "Regiao_de_Comercializacao" },
+  { title: "Data de registro do ANS", value: "Data_Registro_ANS" }
+]);
+
 </script>
 
 <template>
-  <div>
-    <h1>Buscar Operadora</h1>
-    <input v-model="input_field" placeholder="Digite aqui o que quer buscar." />
+  <v-app>
+    <div>
+      <v-container>
+        <!-- Cabeçalho fixo -->
+        <v-row justify="center">
+          <v-col cols="12" class="text-center">
+            <v-card class="pa-3 title-card" elevation="6">
+              <h1>Buscar registro cadastral</h1>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+      
+      <v-container>
+        <v-row justify="center" align="center" class="my-4">
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="input_field"
+              placeholder="Digite aqui o que quer buscar."
+              outlined
+              dense
+            ></v-text-field>
+          </v-col>
 
-    <select v-model="column_search">
-      <option value="Registro_ANS">Registro ANS</option>
-      <option value="CNPJ">CNPJ</option>
-      <option value="Razao_Social">Razão social</option>
-      <option value="Nome_Fantasia">Nome fantasia</option>
-      <option value="Modalidade">Modalidade</option>
-      <option value="Logradouro">Logradouro</option>
-      <option value="Numero">Número</option>
-      <option value="Complemento">Complemento</option>
-      <option value="Bairro">Bairro</option>
-      <option value="Cidade">Cidade</option>
-      <option value="UF">UF</option>
-      <option value="CEP">CEP</option>
-      <option value="DDD">DDD</option>
-      <option value="Telefone">Telefone</option>
-      <option value="Fax">Fax</option>
-      <option value="Endereco_eletronico">Endereco eletrônico</option>
-      <option value="Representante">Representante</option>
-      <option value="Cargo_Representante">Cargo do representante</option>
-      <option value="Regiao_de_Comercializacao">Regiao de comercialização</option>
-      <option value="Data_Registro_ANS">Data de registro do ANS</option>
-    </select>
+          <v-col cols="12" md="4">
+            <v-select
+              v-model="column_search"
+              :items="columns"
+              label="Selecione pelo campo que quer buscar"
+              outlined
+              dense
+            ></v-select>
+          </v-col>
 
-    <button @click="searchInformationTable">Buscar</button>
-    
-    <table border="1">
-      <thead>
-        <tr>
-          <th v-for="(content, column) in result_search[0]" :key="column">{{ column.replace(/"/g, '') }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(row, index) in result_search" :key="index">
-          <td v-for="(content, column) in row" :key="column">{{ content.replace(/"/g, '') }}</td>
-        </tr>
-      </tbody>
-    </table>
+          <v-col cols="12" md="2" class="d-flex justify-center">
+            <v-btn 
+              @click="searchInformationTable" 
+              class="custom-button"
+            >
+              Buscar
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
 
-  </div>
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="12">
+            <v-card v-if="result_search.length > 0" class="pa-4">
+              <v-sheet class="table-container">
+                <v-table border="1">
+                  <thead>
+                    <tr>
+                      <th v-for="(content, column) in result_search[0]" :key="column">
+                        {{ column.replace(/"/g, '') }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(row, index) in result_search" :key="index">
+                      <td v-for="(content, column) in row" :key="column">
+                        {{ content.replace(/"/g, '') }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </v-table>
+              </v-sheet>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+
+    </div>
+  </v-app>
 </template>
 
-<style>
-input {
-  padding: 5px;
-  margin-right: 10px;
+<style scoped>
+.title-card {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  z-index: 1000;
 }
-</style>  
+</style>
